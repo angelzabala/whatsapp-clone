@@ -1,0 +1,55 @@
+.sidebar { 
+    display: flex;
+    flex-direction: column;
+    flex: 0.3;
+}
+.sidebar__header {
+  display: flex;
+  justify-content: space-between;
+  border-right: 2px solid #E7E6E8;
+  padding: 16px;
+}
+
+.sidebar__header_right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 10vw;
+}
+
+.sidebar__header_right .MuiSvgIcon-root:first{ 
+    margin-right: 2vw;
+    font-size: 24px !important;
+}
+
+.sidebar__search {
+    display: flex;
+    align-items: center;
+    background-color: #f6f6f6;
+    padding: 10px;
+}
+
+.sidebar__search_container{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    height: 32px;
+    width: 100%;
+}
+
+.sidebar__search_container > input {
+    border: none;
+    margin-left: 15px;
+    width: 100%;
+}
+
+.sidebar__search_container .MuiSvgIcon-root:first {
+    color: gray;   
+}
+
+.sidebar__chats{
+    flex: 1;
+    background-color: white;
+    overflow-y: auto;
+}

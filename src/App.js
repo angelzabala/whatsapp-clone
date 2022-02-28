@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+// https://www.youtube.com/watch?v=pUxrDcITyjg
+// cuenta de firebase angeldchz@gmail.com proyecto whatsapp-clone
 
-function App() {
+import React from "react";
+
+import "./App.css";
+
+import Sidebar from "./components/sidebar/Sidebar";
+import Login from "./components/login/Login";
+import Chat from "./components/chat/Chat";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
+
+const App = () => {
+  const [{ user }] = useStateValue();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {user ? (
+        <div className="app">
+          <div className="app__body">
+            <Sidebar />
+            <Switch>
+              <Route path="/rooms/:roomId">
+                <Chat />
+              </Route>
+
+              <Route exact path="/" />
+            </Switch>
+          </div>
+        </div>
+      ) : (
+        <Login />
+      )}
+    </Router>
   );
-}
+};
 
 export default App;

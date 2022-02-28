@@ -1,0 +1,27 @@
+.sidebar__chatbox {
+    display: flex;
+    padding: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #f6f6f6;
+    align-items: center;
+}
+
+.sidebar__chatbox:hover{
+    background-color: #ebebeb;
+}
+
+.sidebar__chatbox_info h2, .sidebar__chatbox_info p{
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 16px;
+}
+
+.sidebar__chatbox_info h2{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.sidebar__chatbox_info p{
+    font-size: 12px;
+    color: gray;
+}
